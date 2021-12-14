@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.7;
+pragma solidity ^0.8.7;
 
 contract FuncIntro {
     function add(uint x, uint y) external pure returns(uint){
