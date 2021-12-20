@@ -19,6 +19,8 @@ contract FunctionOuput{
     function destructuringAss() public pure{
         (uint x, bool y) = returnMany();
         (, bool b) = returnMany();
-    
+        x;
+        y;
+        b;
     }
 }
