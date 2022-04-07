@@ -22,5 +22,11 @@ struct User{
     string name;
     string[] friends;
 }
+
+enum color {
+    RED,
+    GREEN,
+    YELLOW
+}
 }
 
