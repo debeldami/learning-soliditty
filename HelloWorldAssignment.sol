@@ -4,7 +4,10 @@ pragma solidity ^0.8.0;
 
 contract HelloWorld{
 
-    function printHelloWord() public returns(string){
+    function printHelloWord() public pure returns(string memory){
         return "hello world";
     }
 }
+
+
+
