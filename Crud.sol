@@ -30,10 +30,10 @@ contract sol{
         user[id].name = userName;
     }
 
-    function remove() public{
+    function remove(uint uid) public{
         for(uint i = 0; i < user.length; i++){
             if(user[i].id == uid){
-                userName = user[uid].name;
+                delete user[i];
             }
         }
     }
