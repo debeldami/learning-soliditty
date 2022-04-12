@@ -17,13 +17,17 @@ contract sol{
         user.push(User(name, user.length +1));
     }
 
-    function read(uint id) public view returns(string memory userName, uint userId){
-        userName = user[id].name;
-        userId = user[id].id;
+    function read(uint uid) public view returns(string memory userName){
+        
+        for(uint i = 0; i < user.length; i++){
+            if(user[i].id == uid){
+                userName = user[uid].name;
+            }
+        }
     }
 
-    function update ()public{
-
+    function update (uint id, string memory userName) public{
+        user[id].name = userName;
     }
 
     function remove() public{
