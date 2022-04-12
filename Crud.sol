@@ -31,6 +31,10 @@ contract sol{
     }
 
     function remove() public{
-
+        for(uint i = 0; i < user.length; i++){
+            if(user[i].id == uid){
+                userName = user[uid].name;
+            }
+        }
     }
 }
