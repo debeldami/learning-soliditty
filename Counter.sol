@@ -2,7 +2,8 @@
 
 pragma solidity ^0.8.7;
 
-//a simple solidity application that increment and decrement a variable on the blockchain
+//a simple solidity application that increment and decrement a variable on the blockchain.
+//is it useful? absolutely not.
 
 contract Counter{
     uint public count;
