@@ -23,24 +23,26 @@ contract Voting{
         proposal.push(Proposal(proposal.length + 1, title, desc, 0, 0));
     }   
 
-    function castVote(uint _ip, bool voteYes) public{
+    function castVote(uint _ip, uint voteYes) public{
 
-        require(proposal.length < _ip, "no such improvements proposal");
+        require(proposal.length <= _ip, "no such improvements proposal");
 
         if(votedAddress[_ip][msg.sender]){
             revert("user already voted");
         }else{
-            proposal[_ip].totalVote +=1;
-            if(voteYes){
-                proposal[_ip].positiveVote +=1;
+            proposal[_ip - 1].totalVote +=1;
+
+            if(voteYes == 1){
+                proposal[_ip - 1].positiveVote +=1;
             }
+
         }
 
         votedAddress[_ip][msg.sender] = true;
     }
 
     function getVote(uint _ip) public view returns(uint totalVote, uint positiveVote){
-        totalVote = proposal[_ip].totalVote;
-        positiveVote = proposal[_ip].positiveVote;
+        totalVote = proposal[_ip - 1].totalVote;
+        positiveVote = proposal[_ip - 1].positiveVote;
     }
 }
