@@ -11,9 +11,7 @@ contract A{
     } 
 
     function callHelloWorld() view public returns(string memory) {
-        B b = B(Bcontract);
-
-        return b.helloWorld();
+        return B(Bcontract).helloWorld();
     }     
 }
 
